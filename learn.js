@@ -1,9 +1,16 @@
 const express = require('express');
 const app = express();
 
-app.get((req, res, next, err) => {
-    console.err(err.stack)
-    res.status(500).send("something Broke!");
+// GET method route
+app.get('/', (req, res, ) => {
+    res.status(500).send("GET request to the homepage");
 });
 
-app.listen(3000)
+// POST method route
+app.post('/', (req, res) =>{
+    res.send('POST request to the homepage')
+})
+
+app.listen(3000, () => {
+    console.log('Listening on port 3000');
+});
